@@ -1,0 +1,20 @@
+{
+  "name": "coinspot-bot",
+  "version": "0.0.1",
+  "description": "This is a simple bot that will check coinspot API",
+  "main": "index.js",
+  "scripts": {
+    "exc": "node app/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asanchezgiraldo/coinspot-bot.git"
+  },
+  "author": "Alejandro Sanchez Giraldo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/asanchezgiraldo/coinspot-bot/issues"
+  },
+  "homepage": "https://github.com/asanchezgiraldo/coinspot-bot#readme"
+}

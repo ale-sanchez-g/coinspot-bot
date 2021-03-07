@@ -35,16 +35,18 @@ app.get('/recomend/:coin', (req, res) => {
     qry = {
         body: JSON.stringify({
           query: `query avaragecost {
-            coins_aggregate(distinct_on: coin, where: {coin: {_eq: "${coinName}"}}) {
+            coins_aggregate(where: {coin: {_eq: "${coinName}"}}, order_by: {created_at: desc}) {
               aggregate {
                 avg {
                   last
                 }
               }
             }
-            coins(limit: 5, order_by: {created_at: desc}, where: {coin: {_eq: "${coinName}"}}) {
+            coins(limit: 5, where: {coin: {_eq: "${coinName}"}}) {
               coin
               last
+              ask
+              bid
             }
           }`,
           variables: {}

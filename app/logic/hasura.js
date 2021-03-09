@@ -44,14 +44,14 @@ coinLogic.recommendation = function(coin) {
     qry = {
         body: JSON.stringify({
           query: `query avaragecost {
-            coins_aggregate(where: {coin: {_eq: "${coin}"}}, order_by: {created_at: desc}) {
+            coins_aggregate(where: {coin: {_eq: "${coin}"}}) {
               aggregate {
                 avg {
                   last
                 }
               }
             }
-            coins(limit: 5, where: {coin: {_eq: "${coin}"}}) {
+            coins(limit: 5, where: {coin: {_eq: "${coin}"}}, order_by: {created_at: desc}) {
               coin
               last
               ask
